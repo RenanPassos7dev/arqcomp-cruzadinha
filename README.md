@@ -8,7 +8,7 @@ Com uma interface inspirada em um laboratório de tecnologia, o jogador precisa 
 
 ## 🚀 Acesse o jogo
 
-🔗 **Jogue agora:** [INSIRA AQUI O LINK DO JOGO PUBLICADO]
+🔗 **Jogue agora:** https://renanpassos7dev.github.io/arqcomp-cruzadinha/
 
 ## 🎮 Como jogar
 
