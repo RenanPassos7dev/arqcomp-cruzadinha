@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#30205b" />
+    <meta
+      name="description"
+      content="Cruzadinha interativa de Arquitetura Computacional."
+    />
+    <title>Palavras do Jogo — Arquitetura Computacional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="brand-line">
+          <div class="brand-mark">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span>NÚCLEO <b>/</b> LABORATÓRIO DE SISTEMAS</span>
+          <span class="edition">DESAFIO 01 · INTERATIVO</span>
+        </div>
+        <div class="hero-copy">
+          <p class="hero-kicker">
+            <span class="live-dot"></span> ARQUITETURA COMPUTACIONAL
+            <span class="kicker-line"></span> MODO PRÁTICA
+          </p>
+          <h1>Palavras em <em>conexão.</em></h1>
+          <p class="hero-subtitle">
+            Um desafio de lógica, memória e arquitetura. Complete os conceitos e
+            conecte cada peça do sistema.
+          </p>
+        </div>
+        <div class="hero-dashboard">
+          <div class="dash-label">STATUS DA MISSÃO <span>● AO VIVO</span></div>
+          <div class="dash-metrics">
+            <div>
+              <strong id="progressLabel">0 de 16</strong><small>PALAVRAS</small>
+            </div>
+            <div class="dash-track"><span id="progressBar"></span></div>
+            <div>
+              <strong id="percentLabel">0%</strong><small>CONCLUÍDO</small>
+            </div>
+          </div>
+          <div class="hero-code">
+            SYS.ARCH <span>—</span> PUZZLE_SEQUENCE_016
+          </div>
+        </div>
+      </div>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-side-label" aria-hidden="true">
+        THINK · CONNECT · SOLVE
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="main-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">01 — ÁREA DE RESOLUÇÃO</p>
+            <h2>Sua próxima <em>resposta</em></h2>
+            <p class="helper">
+              Selecione uma pista ao lado e digite uma letra em cada casa.
+            </p>
+          </div>
+          <div class="round-stamp">
+            <span>SYS</span><strong>16</strong><small>TERMOS</small>
+          </div>
+        </div>
+
+        <div class="selected-clue" id="selectedClue">
+          <span class="selected-number">—</span>
+          <div>
+            <small>PISTA SELECIONADA</small
+            ><strong>Escolha uma pista para começar</strong>
+          </div>
+          <span class="direction-tag">—</span>
+        </div>
+
+        <div class="grid-wrap">
+          <div
+            id="crossword"
+            class="crossword"
+            role="group"
+            aria-label="Grade da cruzadinha"
+          ></div>
+        </div>
+
+        <div class="grid-legend">
+          <span><i class="legend-current"></i> Palavra selecionada</span>
+          <span><i class="legend-correct"></i> Resposta correta</span>
+          <span><i class="legend-error"></i> Confira as letras</span>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-primary" id="checkButton">
+            ✓ Conferir respostas
+          </button>
+          <button class="btn btn-secondary" id="clearButton">
+            Limpar palavra
+          </button>
+          <button class="btn btn-ghost" id="restartButton">↻ Recomeçar</button>
+        </div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite">
+          Escolha uma pista para iniciar o desafio.
+        </p>
+      </section>
+
+      <aside class="clue-card">
+        <div class="clue-card-head">
+          <div>
+            <p class="eyebrow">02 — BANCO DE DESAFIOS</p>
+            <h2>Encontre a <em>palavra</em></h2>
+          </div>
+          <div class="clue-count">
+            <strong id="clueCount">16</strong><span>PISTAS</span>
+          </div>
+        </div>
+        <div class="filter-tabs">
+          <button class="filter active" data-filter="all">
+            Todas <b>16</b>
+          </button>
+          <button class="filter" data-filter="H">
+            Horizontais <b id="hCount">—</b>
+          </button>
+          <button class="filter" data-filter="V">
+            Verticais <b id="vCount">—</b>
+          </button>
+        </div>
+        <div class="clue-list" id="clueList">
+          <section class="clue-group" data-group="H">
+            <h3>HORIZONTAIS <span>→</span></h3>
+            <div id="horizontalClues"></div>
+          </section>
+          <section class="clue-group" data-group="V">
+            <h3>VERTICAIS <span>↓</span></h3>
+            <div id="verticalClues"></div>
+          </section>
+        </div>
+        <div class="clue-bottom">
+          <span class="online-dot"></span> DESAFIO EM ANDAMENTO
+          <small>ARQ. COMPUTACIONAL</small>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="page-footer">
+      <span>NÚCLEO / LABORATÓRIO</span><span>APRENDER É CONECTAR IDEIAS.</span
+      ><span>BUILD 01.16 · HTML / CSS / JS</span>
+    </footer>
+
+    <div class="completion" id="completion" aria-hidden="true">
+      <div class="completion-box">
+        <div class="trophy">✦</div>
+        <p class="eyebrow">DESAFIO CONCLUÍDO</p>
+        <h2>Você encontrou<br /><em>todas as palavras!</em></h2>
+        <p>
+          Mandou bem! Você completou a cruzadinha de Arquitetura Computacional.
+        </p>
+        <button class="btn btn-primary" id="playAgain">Jogar novamente</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
