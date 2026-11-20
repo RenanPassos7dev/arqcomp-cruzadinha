@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 :root {
   --ink: #e9f0ef;
   --muted: #9aa9a7;
@@ -770,4 +771,115 @@ button {
   line-height: 1.7;
   color: #718078;
   margin: 0 0 20px;
+}
+@media (max-width: 1050px) {
+  .hero-dashboard {
+    right: 24px;
+    width: 245px;
+  }
+  .hero-copy {
+    max-width: 55%;
+  }
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 14px;
+  }
+  .main-card {
+    padding: 19px 16px;
+  }
+  .crossword {
+    min-width: 540px;
+  }
+}
+@media (max-width: 760px) {
+  .hero {
+    min-height: 310px;
+    padding: 18px 18px 20px;
+  }
+  .hero-copy {
+    max-width: 100%;
+    margin: 28px 0 14px;
+  }
+  .hero h1 {
+    font-size: 43px;
+  }
+  .hero-dashboard {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 360px);
+    margin-top: 15px;
+  }
+  .hero-side-label {
+    display: none;
+  }
+  .layout {
+    width: calc(100% - 24px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 14px;
+    gap: 14px;
+  }
+  .main-card {
+    width: 100%;
+    padding: 17px 12px;
+  }
+  .clue-card {
+    position: relative;
+    top: auto;
+    width: 100%;
+    height: 560px;
+    min-height: 0;
+    max-height: none;
+  }
+  .card-heading h2 {
+    font-size: 23px;
+  }
+  .helper {
+    font-size: 10px;
+  }
+  .round-stamp {
+    width: 52px;
+    height: 52px;
+  }
+  .crossword {
+    min-width: 550px;
+    grid-template-rows: repeat(14, 31px);
+  }
+  .grid-wrap {
+    padding: 9px 5px;
+  }
+  .action-row .btn {
+    flex: 1;
+  }
+  .page-footer {
+    width: calc(100% - 24px);
+    flex-wrap: wrap;
+    font-size: 7px;
+  }
+  .page-footer span:nth-child(2) {
+    display: none;
+  }
+  .edition {
+    font-size: 7px;
+  }
+}
+@media (max-width: 390px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+  .brand-line {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .card-heading h2 {
+    font-size: 21px;
+  }
+  .selected-clue strong {
+    font-size: 10px;
+  }
+  .btn {
+    padding: 10px 9px;
+    font-size: 9px;
+  }
 }
